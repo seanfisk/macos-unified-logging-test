@@ -11,6 +11,7 @@ void test_level(os_log_t log_object, os_log_type_t type, char *name) {
 		answer = "No";
 	}
 	printf("Can write to %s level: %s\n", name, answer);
+
 	printf("Logging to %s level\n", name);
 	// https://developer.apple.com/documentation/os/os_log_with_type
 	os_log_with_type(log_object, type, "Testing %{public}s level", name);
@@ -22,6 +23,10 @@ int main(int argc, char *argv[]) {
 	os_log_t log_object = os_log_create(/*subsystem=*/"com.seanfisk.macos-unified-logging-test", /*category=*/"General");
 
 	test_level(log_object, OS_LOG_TYPE_FAULT, "fault");
+	test_level(log_object, OS_LOG_TYPE_ERROR, "error");
+	test_level(log_object, OS_LOG_TYPE_INFO, "info");
+	test_level(log_object, OS_LOG_TYPE_DEFAULT, "default");
+	test_level(log_object, OS_LOG_TYPE_DEBUG, "debug");
 
 	puts("Freeing log object");
 	free(log_object);
