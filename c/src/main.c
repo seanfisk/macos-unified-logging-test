@@ -13,7 +13,7 @@ void test_level(os_log_t log_object, os_log_type_t type, char *name) {
 	printf("Can write to %s level: %s\n", name, answer);
 	printf("Logging to %s level\n", name);
 	// https://developer.apple.com/documentation/os/os_log_with_type
-	os_log_with_type(log_object, type, "Testing %{public} level", name);
+	os_log_with_type(log_object, type, "Testing %{public}s level", name);
 }
 
 int main(int argc, char *argv[]) {

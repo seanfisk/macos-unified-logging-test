@@ -6,4 +6,4 @@ set -o xtrace
 
 rm -rf target
 mkdir target
-clang -o target/main src/main.c
+clang -Wall -o target/main src/main.c
