@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -o errexit
+set -o xtrace
+
+exec /usr/bin/log show \
+     --color auto \
+     --style compact \
+     --predicate 'subsystem = "com.seanfisk.macos-unified-logging-test"' \
+     --debug \
+     --info \
+     --last 10m
