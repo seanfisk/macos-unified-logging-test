@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -o errexit
+set -o xtrace
+
+exec /usr/bin/sudo /usr/bin/log config \
+     --mode 'level: debug, persist: debug, stream: live' \
+     --subsystem com.seanfisk.macos-unified-logging-test
