@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -o errexit
+set -o xtrace
+
+exec /usr/bin/log stream \
+     --color auto \
+     --style compact \
+     --predicate 'subsystem = "com.seanfisk.macos-unified-logging-test"' \
+     --level debug
