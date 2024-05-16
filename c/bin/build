@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -o errexit
+set -o nounset
+set -o xtrace
+
+rm -rf target
+mkdir target
+clang -o target/main src/main.c
